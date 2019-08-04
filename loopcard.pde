@@ -1,6 +1,9 @@
-boolean isprotagcard = true;
+//settings
+boolean isprotagcard = false;
 int colorscheme = 0; //0 is base game, 1 is midnight circle, 2 is cosmic evil
+String filename = "gohdamm.png";
 
+//script info
 String title = "GOHDA CULPRIT THEORY";
 int days = 6;
 String loops = "3 or 4";
@@ -15,7 +18,7 @@ String[] culprits = new String[] {
   "Kinzo",
   "",
   "",
-  "Kanon",
+  "Krauss",
   "Kumasawa",
   "",
   "",
@@ -25,14 +28,14 @@ String[] incidents = new String[] {
   "Tiny Bombs",
   "",
   "",
-  "Witchs' Duel",
+  "Lunar Hospitality",
   "Mackerel Incident",
   "",
   "",
 };
 String[] characters = new String[] {
   "Gohda",
-  "Natsuhi",
+  "Krauss",
   "George",
   "Kanon",
   "Kinzo",
@@ -41,7 +44,7 @@ String[] characters = new String[] {
 };
 String[] roles = new String[] {
   "Magical Chef",
-  "Adulteress",
+  "Person",
   "Big Guy",
   "Cutie",
   "Goldsmith",
@@ -51,7 +54,7 @@ String[] roles = new String[] {
   "",
 };
 
-
+//Below this is where only knowers dare tread
 
 int defaultsize = 19;
 int boldsize = 22;
@@ -149,7 +152,7 @@ fill(boldcolor);
 text("Main plot :",81,120);
 text("Subplots :",81,147);
 text("Cast",81,195);
-text("Roles",284,195);
+text("Role",284,195);
 text("Day",81,537);
 text("Incident",143,537);
 text("Culprit",323,537);
@@ -191,3 +194,5 @@ for (int i = 0; i < days; i++) {
 }
 
 }
+
+save(filename);
