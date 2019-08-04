@@ -66,6 +66,7 @@ color textcolor = color(230);
 color titlecolor = color(120,190,190);
 color bgcolor = color(66,10,5);
 color boldcolor = color(206,180,0);
+background(255);
 if (colorscheme == 1) {
   titlecolor = color(224,0,21);
   bgcolor = color(6,9,33);
