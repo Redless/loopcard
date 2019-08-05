@@ -1,5 +1,8 @@
+import processing.pdf.*;
+
+size(1700,2200,PDF,"printable.pdf");
+
 //settings
-boolean isprotagcard = false;
 int colorscheme = 0; //0 is base game, 1 is midnight circle, 2 is cosmic evil
 String filename = "gohdamm.png";
 
@@ -67,6 +70,7 @@ color titlecolor = color(120,190,190);
 color bgcolor = color(66,10,5);
 color boldcolor = color(206,180,0);
 background(255);
+
 if (colorscheme == 1) {
   titlecolor = color(224,0,21);
   bgcolor = color(6,9,33);
@@ -74,8 +78,6 @@ if (colorscheme == 1) {
   titlecolor = color(216,160,60);
   bgcolor = color(30,54,48);
 }
-
-size(500,700);
 
 strokeWeight(0);
 
@@ -87,11 +89,7 @@ fill(bgcolor);
 
 rect(22,22,456,662,10);
 
-//fill(0,128,178);
-
-//circle(50,58,48);
-
-if (isprotagcard) { ///GENERATES PROTAG CARD
+///GENERATES PROTAG CARD
 
 int x = 60;
 int y = 406;
@@ -135,10 +133,18 @@ for (int i = 0; i < days; i++) {
   text(incidents[i],170, 221+33*i);
 }
 
-} else {  ///GENERATES MM CARD
-  
-int x = 60;
-int y = 406;
+///GENERATES MM CARD
+
+pushMatrix();
+translate(1200,1500);
+
+fill(0);
+
+rect(0,0, 500, 700, 20);
+
+fill(bgcolor);
+
+rect(22,22,456,662,10);
 
 PFont titlefont = createFont(boldfontname,titlesize);
 textFont(titlefont);
@@ -146,7 +152,6 @@ fill(titlecolor);
 
 text(title,95,64);
 
-PFont ylfont = createFont(boldfontname,boldsize);
 textFont(ylfont);
 fill(boldcolor);
 
@@ -158,7 +163,6 @@ text("Day",81,537);
 text("Incident",143,537);
 text("Culprit",323,537);
 
-PFont tlfont = createFont(boldfontname,bigsize);
 textFont(tlfont);
 
 pushMatrix();
@@ -170,7 +174,6 @@ fill(textcolor);
 text("Mastermind card", x,y);
 popMatrix();
 
-PFont smallfont = createFont(fontname,defaultsize);
 textFont(smallfont);
 
 text(mainplot,210,120);
@@ -193,7 +196,3 @@ for (int i = 0; i < days; i++) {
     j++;
   }
 }
-
-}
-
-save(filename);
