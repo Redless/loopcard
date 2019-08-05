@@ -15,15 +15,25 @@ String sub1 = "Oh Desire";
 String sub2 = "Expanding Wastelines";
 //Be sure to add \n characters to wrap the line if you change the below:
 String specrule = "None";
-String[] culprits = new String[] {
-  "",
+String[] characters = new String[] {
+  "Gohda",
+  "George",
+  "Kanon",
   "Kinzo",
-  "",
-  "",
+  "Kumasawa",
+  "Genji",
+  "Krauss",
+};
+String[] roles = new String[] {
+  "Magical Chef",
+  "Big Guy",
+  "Cutie",
+  "Goldsmith",
+};
+String[] culprits = new String[] {
+  "Kinzo",
   "Krauss",
   "Kumasawa",
-  "",
-  "",
 };
 String[] incidents = new String[] {
   "",
@@ -32,26 +42,6 @@ String[] incidents = new String[] {
   "",
   "Lunar Hospitality",
   "Mackerel Incident",
-  "",
-  "",
-};
-String[] characters = new String[] {
-  "Gohda",
-  "Krauss",
-  "George",
-  "Kanon",
-  "Kinzo",
-  "Kumasawa",
-  "Genji",
-};
-String[] roles = new String[] {
-  "Magical Chef",
-  "Person",
-  "Big Guy",
-  "Cutie",
-  "Goldsmith",
-  "Person",
-  "Person",
   "",
   "",
 };
@@ -182,7 +172,11 @@ text(sub2,199,168);
 for (int i = 0; i < characters.length; i++) {
   rect(77, 224+25*i, 392, 2);
   text(characters[i],82,221+25*i);
-  text(roles[i],284, 221+25*i);
+  try {
+    text(roles[i],284, 221+25*i);
+  } catch (ArrayIndexOutOfBoundsException e) {
+    text("Person",284, 221+25*i);
+  }
 }
 
 int j = 0;
@@ -191,7 +185,7 @@ for (int i = 0; i < days; i++) {
     rect(77, 561+25*j, 392, 2);
     text(str(i+1),81,560+25*j);
     text(incidents[i],143, 560+25*j);
-    text(culprits[i],323, 560+25*j);
+    text(culprits[j],323, 560+25*j);
     j++;
   }
 }
