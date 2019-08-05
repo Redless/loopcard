@@ -30,11 +30,6 @@ String[] roles = new String[] {
   "Cutie",
   "Goldsmith",
 };
-String[] culprits = new String[] {
-  "Kinzo",
-  "Krauss",
-  "Kumasawa",
-};
 String[] incidents = new String[] {
   "",
   "Tiny Bombs",
@@ -44,6 +39,11 @@ String[] incidents = new String[] {
   "Mackerel Incident",
   "",
   "",
+};
+String[] culprits = new String[] {
+  "Kinzo",
+  "Krauss",
+  "Kumasawa",
 };
 
 //Below this is where only knowers dare tread
