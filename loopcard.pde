@@ -4,7 +4,6 @@ size(1700,2200,PDF,"printable.pdf");
 
 //settings
 int colorscheme = 0; //0 is base game, 1 is midnight circle, 2 is cosmic evil
-String filename = "gohdamm.png";
 
 //script info
 String title = "GOHDA CULPRIT THEORY";
