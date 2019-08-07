@@ -72,6 +72,9 @@ strokeWeight(0);
 
 fill(0);
 
+pushMatrix();
+translate(200,200);
+
 rect(0,0, 500, 700, 20);
 
 fill(bgcolor);
@@ -79,6 +82,8 @@ fill(bgcolor);
 rect(22,22,456,662,10);
 
 ///GENERATES PROTAG CARD
+
+
 
 int x = 60;
 int y = 406;
@@ -124,8 +129,9 @@ for (int i = 0; i < days; i++) {
 
 ///GENERATES MM CARD
 
+popMatrix();
 pushMatrix();
-translate(1200,1500);
+translate(1000,1200);
 
 fill(0);
 
