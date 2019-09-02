@@ -1,3 +1,5 @@
+//TO DO: try and document this so a layman can use it.
+
 import processing.pdf.*;
 
 color bgcolor;
@@ -28,6 +30,7 @@ String[] roles;
 String mainplot;
 String sub1;
 String sub2;
+color circlecolor;
 
 
 void drawProtagCard() {
@@ -51,6 +54,34 @@ void drawProtagCard() {
 
 
   textFont(ylfont);
+  
+  noFill();
+  stroke(200);
+  
+  strokeWeight(3);
+  line(48,80,48,86);
+  strokeWeight(2);
+  line(48,48,48,16);
+  line(48,48,18,48);
+  strokeWeight(1);
+  line(48,48,28,68);
+  line(48,48,28,28);
+  
+  strokeWeight(3);
+  arc(48,48,64,64,PI/4.,PI*13./8.);
+  arc(48,48,54,54,PI*5./8.,PI*7./8.);
+  strokeWeight(2);
+  arc(48,48,54,54,PI*17./16.,PI*25./16.);
+  strokeWeight(1);
+  arc(48,48,48,48,-PI/4.,PI*3./8.);
+  
+  noStroke();
+  fill(circlecolor);
+  circle(48,48,44);
+  
+  
+  
+  
   fill(boldcolor);
 
   text("Tragedy set :", 96, 56);
@@ -74,10 +105,10 @@ void drawProtagCard() {
   text("Protagonists card", x, y);
   popMatrix();
 
-
+  
   textFont(smallfont);
 
-  text(tragset, 250, 57);
+  text(tragset, 255, 57);
   text(str(days), 275, 111);
   text(loops, 308, 83);
   text(specrule, 82, 588);
@@ -110,6 +141,29 @@ void drawMMCard() {
   text(title, 95, 64);
 
   textFont(ylfont);
+  noFill();
+  stroke(200);
+  
+  strokeWeight(3);
+  line(48,80,48,86);
+  strokeWeight(2);
+  line(48,48,48,16);
+  line(48,48,18,48);
+  strokeWeight(1);
+  line(48,48,28,68);
+  line(48,48,28,28);
+  
+  strokeWeight(3);
+  arc(48,48,64,64,PI/4.,PI*13./8.);
+  arc(48,48,54,54,PI*5./8.,PI*7./8.);
+  strokeWeight(2);
+  arc(48,48,54,54,PI*17./16.,PI*25./16.);
+  strokeWeight(1);
+  arc(48,48,48,48,-PI/4.,PI*3./8.);
+  
+  noStroke();
+  fill(circlecolor);
+  circle(48,48,44);
   fill(boldcolor);
 
   text("Main plot :", 81, 120);
@@ -218,15 +272,20 @@ void setup() {
   titlecolor = color(120, 190, 190);
   bgcolor = color(66, 10, 5);
   boldcolor = color(206, 180, 0);
+  circlecolor = color(0,150,190);
   background(255);
 
   if (colorscheme == 1) {
     titlecolor = color(224, 0, 21);
     bgcolor = color(6, 9, 33);
+    circlecolor = color(224,0,21);
   } else if (colorscheme == 2) {
     titlecolor = color(216, 160, 60);
     bgcolor = color(30, 54, 48);
+    circlecolor = color(216,160,60);
   }
+  
+  
 
   strokeWeight(0);
 
@@ -247,7 +306,7 @@ void setup() {
   drawMMCard();
   popMatrix();
   
-  /*pushMatrix();
+  pushMatrix();
   translate(800, 590);
   rotate(HALF_PI);
   drawProtagCard();
@@ -280,5 +339,5 @@ void setup() {
   drawMMCard();
   popMatrix();
   
-  */
+  
 }
