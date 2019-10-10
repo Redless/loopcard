@@ -1,0 +1,29 @@
+name: The First Script
+theme: 0
+set: First Steps
+main: Light of the AvengerM
+sub1: Shadow of the Ripper
+sub2: 
+loops: 3
+days: 4
+cast:
+Doctor
+Shrine Maiden
+Office Worker
+Police Officer
+Girl Student
+Boy Student
+roles:
+Brain
+Serial Killer
+Conspiracy Theorist
+incidents:
+1: 
+2: Murder
+3: Suicide
+4: 
+culprits:
+Office Worker
+Girl Student
+special rule (can be multiple lines):
+None

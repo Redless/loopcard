@@ -1,7 +1,8 @@
-//TO DO: try and document this so a layman can use it.
+//Be sure to add newline characters to your special rule.
 
 import processing.pdf.*;
 
+int colorscheme;
 color bgcolor;
 int defaultsize;
 int boldsize;
@@ -32,6 +33,70 @@ String sub1;
 String sub2;
 color circlecolor;
 
+void loadDataFromFile(String filename) {
+  int lineon;
+  String[] lines = loadStrings(filename);
+  title = lines[0].substring(6);
+  if (lines[1].charAt(7) == '0') {
+    colorscheme = 0;
+  }
+  if (lines[1].charAt(7) == '1') {
+    colorscheme = 1;
+  } 
+  if (lines[1].charAt(7) == '2') {
+    colorscheme = 2;
+  } 
+  tragset = lines[2].substring(5);
+  mainplot = lines[3].substring(6);
+  sub1 = lines[4].substring(6);
+  sub2 = lines[5].substring(6);
+  loops = lines[6].substring(7);
+  days = Integer.valueOf(lines[7].substring(6));
+  lineon = 9;
+  while (!lines[lineon].equals("roles:")) {
+    lineon++;
+  }
+  characters = new String[lineon-9];
+  lineon = 9;
+  while (!lines[lineon].equals("roles:")) {
+    characters[lineon-9] = lines[lineon];
+    lineon++;
+  }
+  lineon++;
+  int oldlineon = lineon;
+  int numroles = 0;
+  while (!lines[lineon].equals("incidents:")) {
+    lineon++;
+    numroles++;
+  }
+  lineon = oldlineon;
+  int roleon = 0;
+  roles = new String[numroles];
+  while (!lines[lineon].equals("incidents:")) {
+    roles[roleon] = lines[lineon];
+    lineon++;
+    roleon++;
+  }
+  lineon++;
+  incidents = new String[25];
+  for (int i = 0; i < days; i++) {
+    incidents[i] = lines[lineon+i].substring(3);
+  }
+  lineon = lineon+days;
+  lineon++;
+  roleon = 0;
+  while (!lines[lineon].equals("special rule (can be multiple lines):")) {
+    culprits[roleon] = lines[lineon];
+    lineon++;
+    roleon++;
+  }
+  lineon++;
+  specrule = "";
+  while (lineon < lines.length){
+    specrule = specrule + lines[lineon] + "\n";
+    lineon++;
+  }
+}
 
 void drawProtagCard() {
 
@@ -111,6 +176,7 @@ void drawProtagCard() {
   text(tragset, 255, 57);
   text(str(days), 275, 111);
   text(loops, 308, 83);
+  textLeading(19);
   text(specrule, 82, 588);
 
   for (int i = 0; i < days; i++) {
@@ -218,7 +284,7 @@ void setup() {
   size(1700, 2200, PDF, "printable.pdf");
   //settings
   //START EDITING HERE
-  int colorscheme = 0; //0 is base game, 1 is midnight circle, 2 is cosmic evil
+  colorscheme = 0; //0 is base game, 1 is midnight circle, 2 is cosmic evil
 
   //script info
   title = "GOHDA CULPRIT THEORY";
@@ -260,7 +326,7 @@ void setup() {
     "Krauss", 
     "Kumasawa", 
   };
-  //STOP EDITING HERE
+  loadDataFromFile("1.trag");
 
   defaultsize = 19;
   boldsize = 21;
@@ -294,7 +360,7 @@ void setup() {
   smallfont = createFont(fontname, defaultsize);
   
   
-
+  loadDataFromFile("1.trag");
   pushMatrix();
   translate(800, 70);
   rotate(HALF_PI);
@@ -306,6 +372,7 @@ void setup() {
   drawMMCard();
   popMatrix();
   
+  loadDataFromFile("2.trag");
   pushMatrix();
   translate(800, 590);
   rotate(HALF_PI);
@@ -317,6 +384,7 @@ void setup() {
   drawMMCard();
   popMatrix();
   
+  loadDataFromFile("3.trag");
   pushMatrix();
   translate(800, 1110);
   rotate(HALF_PI);
@@ -328,6 +396,7 @@ void setup() {
   drawMMCard();
   popMatrix();
   
+  loadDataFromFile("4.trag");
   pushMatrix();
   translate(800, 1630);
   rotate(HALF_PI);

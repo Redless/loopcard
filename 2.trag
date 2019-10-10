@@ -1,0 +1,31 @@
+name: The Second Script
+theme: 2
+set: Still First Steps
+main: Murder Plan
+sub1: Shadow of the Ripper
+sub2: 
+loops: 3
+days: 4
+cast:
+Doctor
+Shrine Maiden
+Office Worker
+Police Officer
+Girl Student
+Boy Student
+roles:
+Serial Killer
+Brain
+Killer
+Conspiracy Theorist
+Key Person
+incidents:
+1: 
+2: Murder
+3: Suicide
+4: 
+culprits:
+Office Worker
+Girl Student
+special rule (can be multiple lines):
+None
