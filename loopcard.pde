@@ -101,6 +101,7 @@ void loadDataFromFile(String filename) {
   lineon = lineon+days;
   lineon++;
   roleon = 0;
+  culprits = new String[25];
   while (!lines[lineon].equals("special rule (can be multiple lines):")) {
     culprits[roleon] = lines[lineon];
     lineon++;
