@@ -1,5 +1,0 @@
-hello.
-
-on line 166ish of the .pde file, you will find a bunch of lines that you should edit so that they conform to your script. there will be a line that says "START EDITING HERE" or something and after that they begin
-
-on line 209ish there will be a line that says STOP EDITING HERE and after that you should stop.
