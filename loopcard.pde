@@ -342,7 +342,6 @@ void setup() {
     "Krauss", 
     "Kumasawa", 
   };
-  loadDataFromFile("1.trag");
 
   defaultsize = 19;
   boldsize = 21;
