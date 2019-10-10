@@ -33,6 +33,22 @@ String sub1;
 String sub2;
 color circlecolor;
 
+void setcolor() {
+  if (colorscheme == 0) {
+    titlecolor = color(120, 190, 190);
+    bgcolor = color(66, 10, 5);
+    circlecolor = color(0,150,190);
+  } else if (colorscheme == 1) {
+    titlecolor = color(224, 0, 21);
+    bgcolor = color(6, 9, 33);
+    circlecolor = color(224,0,21);
+  } else if (colorscheme == 2) {
+    titlecolor = color(216, 160, 60);
+    bgcolor = color(30, 54, 48);
+    circlecolor = color(216,160,60);
+  }
+}
+
 void loadDataFromFile(String filename) {
   int lineon;
   String[] lines = loadStrings(filename);
@@ -341,15 +357,8 @@ void setup() {
   circlecolor = color(0,150,190);
   background(255);
 
-  if (colorscheme == 1) {
-    titlecolor = color(224, 0, 21);
-    bgcolor = color(6, 9, 33);
-    circlecolor = color(224,0,21);
-  } else if (colorscheme == 2) {
-    titlecolor = color(216, 160, 60);
-    bgcolor = color(30, 54, 48);
-    circlecolor = color(216,160,60);
-  }
+  setcolor();
+  
   
   
 
@@ -360,7 +369,8 @@ void setup() {
   smallfont = createFont(fontname, defaultsize);
   
   
-  loadDataFromFile("1.trag");
+  loadDataFromFile("script1.txt");
+  setcolor();
   pushMatrix();
   translate(800, 70);
   rotate(HALF_PI);
@@ -372,7 +382,8 @@ void setup() {
   drawMMCard();
   popMatrix();
   
-  loadDataFromFile("2.trag");
+  loadDataFromFile("script2.txt");
+  setcolor();
   pushMatrix();
   translate(800, 590);
   rotate(HALF_PI);
@@ -384,7 +395,8 @@ void setup() {
   drawMMCard();
   popMatrix();
   
-  loadDataFromFile("3.trag");
+  loadDataFromFile("script3.txt");
+  setcolor();
   pushMatrix();
   translate(800, 1110);
   rotate(HALF_PI);
@@ -396,7 +408,8 @@ void setup() {
   drawMMCard();
   popMatrix();
   
-  loadDataFromFile("4.trag");
+  loadDataFromFile("script4.txt");
+  setcolor();
   pushMatrix();
   translate(800, 1630);
   rotate(HALF_PI);
