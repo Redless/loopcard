@@ -1,7 +1,7 @@
 name: The First Script
 theme: 0
 set: First Steps
-main: Light of the AvengerM
+main: Light of the Avenger
 sub1: Shadow of the Ripper
 sub2: 
 loops: 3

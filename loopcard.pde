@@ -134,36 +134,9 @@ void drawProtagCard() {
   x = 60;
   y = 406;
 
+  drawCircle(48,48,44,"8");
 
   textFont(ylfont);
-  
-  noFill();
-  stroke(200);
-  
-  strokeWeight(3);
-  line(48,80,48,86);
-  strokeWeight(2);
-  line(48,48,48,16);
-  line(48,48,18,48);
-  strokeWeight(1);
-  line(48,48,28,68);
-  line(48,48,28,28);
-  
-  strokeWeight(3);
-  arc(48,48,64,64,PI/4.,PI*13./8.);
-  arc(48,48,54,54,PI*5./8.,PI*7./8.);
-  strokeWeight(2);
-  arc(48,48,54,54,PI*17./16.,PI*25./16.);
-  strokeWeight(1);
-  arc(48,48,48,48,-PI/4.,PI*3./8.);
-  
-  noStroke();
-  fill(circlecolor);
-  circle(48,48,44);
-  
-  
-  
-  
   fill(boldcolor);
 
   text("Tragedy set :", 96, 56);
@@ -203,6 +176,43 @@ void drawProtagCard() {
   }
 }
 
+void drawCircle(int x,int y,int size,String label) {
+  noFill();
+  stroke(200);
+  
+  strokeWeight(3);
+  line(x,y+size*32/44,x,y+size*38/44);
+  strokeWeight(2);
+  line(x,y,x,y-size*32/44);
+  line(x,y,x-size*20/44,y);
+  line(x,y+size*32/44,x,y+size);
+  strokeWeight(1);
+  line(x,y,x-size*25/44,y+size*25/44);
+  line(x,y,x-size*25/44,y-size*25/44);
+  line(x,y,x,y-size*40/44);
+  line(x,y,x-size*40/44,y);
+  
+  strokeWeight(3);
+  arc(x,y,size*64/44,size*64/44,PI/4.,PI*13./8.);
+  arc(x,y,size*54/44,size*54/44,PI*5./8.,PI*7./8.);
+  strokeWeight(2);
+  arc(x,y,size*54/44,size*54/44,PI*17./16.,PI*25./16.);
+  strokeWeight(1);
+  arc(x,y,size*48/44,size*48/44,-PI/4.,PI*3./8.);
+  
+  noStroke();
+  fill(circlecolor);
+  circle(x,y,size);
+  
+  
+  PFont numFont = createFont(boldfontname, size*.7);
+  textFont(numFont);
+  fill(250);
+  textAlign(CENTER, CENTER);
+  text(label,x,y);
+  textAlign(LEFT);
+}
+
 ///GENERATES MM CARD
 
 void drawMMCard() {
@@ -224,31 +234,10 @@ void drawMMCard() {
   text(title, 95, 64);
 
   textFont(ylfont);
-  noFill();
-  stroke(200);
   
-  strokeWeight(3);
-  line(48,80,48,86);
-  strokeWeight(2);
-  line(48,48,48,16);
-  line(48,48,18,48);
-  strokeWeight(1);
-  line(48,48,28,68);
-  line(48,48,28,28);
-  
-  strokeWeight(3);
-  arc(48,48,64,64,PI/4.,PI*13./8.);
-  arc(48,48,54,54,PI*5./8.,PI*7./8.);
-  strokeWeight(2);
-  arc(48,48,54,54,PI*17./16.,PI*25./16.);
-  strokeWeight(1);
-  arc(48,48,48,48,-PI/4.,PI*3./8.);
-  
-  noStroke();
-  fill(circlecolor);
-  circle(48,48,44);
+  drawCircle(48,48,44,"12");
+  textFont(ylfont);
   fill(boldcolor);
-
   text("Main plot :", 81, 120);
   text("Subplots :", 81, 147);
   text("Cast", 81, 195);
