@@ -182,29 +182,35 @@ void drawCircle(int x,int y,int size,String label) {
   noFill();
   stroke(200);
   
-  strokeWeight(3);
+  strokeWeight(size*3/44);
   line(x,y+size*32/44,x,y+size*38/44);
-  strokeWeight(2);
+  strokeWeight(size*2/44);
   line(x,y,x,y-size*32/44);
   line(x,y,x-size*20/44,y);
   line(x,y+size*32/44,x,y+size);
-  strokeWeight(1);
+  strokeWeight(size*1/44);
   line(x,y,x-size*25/44,y+size*25/44);
   line(x,y,x-size*25/44,y-size*25/44);
   line(x,y,x,y-size*40/44);
   line(x,y,x-size*40/44,y);
+  line(x,y,x+size*28/44,y);
+  line(x,y,x+size*28/44*sqrt(3)/2,y+size*30/44*1/2);
+  line(x,y,x+size*28/44*sqrt(3)/2,y-size*30/44*1/2);
   
-  strokeWeight(3);
+  strokeWeight(size*3/44);
   arc(x,y,size*64/44,size*64/44,PI/4.,PI*13./8.);
   arc(x,y,size*54/44,size*54/44,PI*5./8.,PI*7./8.);
-  strokeWeight(2);
+  strokeWeight(size*2/44);
   arc(x,y,size*54/44,size*54/44,PI*17./16.,PI*25./16.);
-  strokeWeight(1);
-  arc(x,y,size*48/44,size*48/44,-PI/4.,PI*3./8.);
+  //strokeWeight(size*1/44);
+  arc(x,y,size*52/44,size*52/44,-PI/4.,PI*3./8.);
   
-  noStroke();
+  strokeWeight(size/44);
+  circle(x,y+size*26/44,size*8/44);
   fill(circlecolor);
+  strokeWeight(size/88);
   circle(x,y,size);
+  noStroke();
   
   
   PFont numFont = createFont(boldfontname, size*.75);
