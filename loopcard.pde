@@ -31,6 +31,7 @@ String[] roles;
 String mainplot;
 String sub1;
 String sub2;
+String scriptnumber;
 color circlecolor;
 
 void setcolor() {
@@ -68,7 +69,8 @@ void loadDataFromFile(String filename) {
   sub2 = lines[5].substring(6);
   loops = lines[6].substring(7);
   days = Integer.valueOf(lines[7].substring(6));
-  lineon = 9;
+  scriptnumber = lines[8].substring(3);
+  lineon = 10;
   while (!lines[lineon].equals("roles:")) {
     lineon++;
   }
@@ -134,7 +136,7 @@ void drawProtagCard() {
   x = 60;
   y = 406;
 
-  drawCircle(48,48,44,"8");
+  drawCircle(48,48,44,scriptnumber);
 
   textFont(ylfont);
   fill(boldcolor);
@@ -205,11 +207,11 @@ void drawCircle(int x,int y,int size,String label) {
   circle(x,y,size);
   
   
-  PFont numFont = createFont(boldfontname, size*.7);
+  PFont numFont = createFont(boldfontname, size*.75);
   textFont(numFont);
   fill(250);
   textAlign(CENTER, CENTER);
-  text(label,x,y);
+  text(label,x,y-size*3/44);
   textAlign(LEFT);
 }
 
@@ -235,7 +237,7 @@ void drawMMCard() {
 
   textFont(ylfont);
   
-  drawCircle(48,48,44,"12");
+  drawCircle(48,48,44,scriptnumber);
   textFont(ylfont);
   fill(boldcolor);
   text("Main plot :", 81, 120);

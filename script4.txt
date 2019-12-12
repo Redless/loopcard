@@ -6,6 +6,7 @@ sub1: Shadow of the Ripper
 sub2: 
 loops: 3
 days: 4
+#: 3
 cast:
 Doctor
 Shrine Maiden
