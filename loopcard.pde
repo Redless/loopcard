@@ -37,17 +37,62 @@ color circlecolor;
 void setcolor() {
   if (colorscheme == 0) {
     titlecolor = color(120, 190, 190);
-    bgcolor = color(66, 10, 5);
+    bgcolor = color(70, 15, 8);
     circlecolor = color(0,150,190);
   } else if (colorscheme == 1) {
     titlecolor = color(224, 0, 21);
-    bgcolor = color(6, 9, 33);
+    bgcolor = color(11, 5, 20);
     circlecolor = color(224,0,21);
   } else if (colorscheme == 2) {
     titlecolor = color(216, 160, 60);
-    bgcolor = color(30, 54, 48);
+    bgcolor = color(37, 50, 47);
     circlecolor = color(216,160,60);
   }
+}
+
+void drawCard(int x,int y,int width,int height, int r, int g, int b) {
+  int windowsize = 10;
+  PGraphics card = createGraphics(width,height);
+  card.beginDraw();
+  card.loadPixels();
+
+  color[][] newpixels = new color[width][height];
+  float[][] oldpixels = new float[width][height];
+
+  for (int i = 0; i<(height); i++){
+    for (int j = 0; j<(width); j++){
+      oldpixels[j][i] = random(1);
+    }
+  }
+
+  for (int i = 0; i<(height); i++){
+    for (int j = 0; j<(width); j++){
+      int numpix = 0;
+      float tothue = 0.;
+      for (int yo = -windowsize; yo<=windowsize;yo++) {
+        for (int xo = -windowsize; xo<=windowsize;xo++) {
+          if ((yo+j) > 0 && (yo+j) < width && (xo+i) > 0 && (xo+i) < height){
+            numpix++;
+            tothue = tothue + oldpixels[yo+j][xo+i];
+          }
+        }
+      }
+      newpixels[j][i] = color(r*2*tothue/numpix,g*2*tothue/numpix,b*2*tothue/numpix);
+    }
+  }
+
+
+
+  for (int i = 0; i<(height); i++){
+    for (int j = 0; j<(width); j++){
+      card.pixels[j + i*width] = newpixels[j][i];
+    }
+  }
+
+
+  card.updatePixels();
+  card.endDraw();
+  image(card,x,y,width,height);
 }
 
 void loadDataFromFile(String filename) {
@@ -125,9 +170,8 @@ void drawProtagCard() {
 
   rect(0, 0, 500, 700, 20);
 
-  fill(bgcolor);
 
-  rect(22, 22, 456, 662, 10);
+  drawCard(22,22,456,662,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
 
   ///GENERATES PROTAG CARD
 
@@ -231,9 +275,7 @@ void drawMMCard() {
 
   rect(0, 0, 500, 700, 20);
 
-  fill(bgcolor);
-
-  rect(22, 22, 456, 662, 10);
+  drawCard(22,22,456,662,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
 
   titlefont = createFont(boldfontname, titlesize);
   textFont(titlefont);
