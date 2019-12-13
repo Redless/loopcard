@@ -50,7 +50,7 @@ void setcolor() {
   }
 }
 
-void drawCard(int x,int y,int width,int height, int r, int g, int b) {
+void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) {
   int windowsize = 10;
   PGraphics card = createGraphics(width,height);
   card.beginDraw();
@@ -78,6 +78,35 @@ void drawCard(int x,int y,int width,int height, int r, int g, int b) {
         }
       }
       newpixels[j][i] = color(r*2*tothue/numpix,g*2*tothue/numpix,b*2*tothue/numpix);
+    }
+  }
+  
+  for (int i = 0; i <= corner; i++) {
+    for (int j = 0; j <= corner; j++) {
+      if (pow(corner-i,2) + pow(corner-j,2) > pow(corner,2)) {
+        newpixels[j][i] = color(0,0,0,0);
+      }
+    }
+  }
+  for (int i = height-corner-1; i < height; i++) {
+    for (int j = width-corner-1; j < width; j++) {
+      if (pow(height-corner-1-i,2) + pow(width-corner-1-j,2) > pow(corner,2)) {
+        newpixels[j][i] = color(0,0,0,0);
+      }
+    }
+  }
+  for (int i = 0; i <= corner; i++) {
+    for (int j = width-corner-1; j < width; j++) {
+      if (pow(corner-i,2) + pow(width-corner-1-j,2) > pow(corner,2)) {
+        newpixels[j][i] = color(0,0,0,0);
+      }
+    }
+  }
+  for (int i = height-corner-1; i < height; i++) {
+    for (int j = 0; j <= corner; j++) {
+      if (pow(height-corner-1-i,2) + pow(corner-j,2) > pow(corner,2)) {
+        newpixels[j][i] = color(0,0,0,0);
+      }
     }
   }
 
@@ -164,14 +193,16 @@ void loadDataFromFile(String filename) {
 
 void drawProtagCard() {
 
-  fill(0);
-
   
 
+  
+  fill(0);
   rect(0, 0, 500, 700, 20);
+  
 
 
-  drawCard(22,22,456,662,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
+  drawCard(22,22,456,662,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
+
 
   ///GENERATES PROTAG CARD
 
@@ -275,7 +306,7 @@ void drawMMCard() {
 
   rect(0, 0, 500, 700, 20);
 
-  drawCard(22,22,456,662,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
+  drawCard(22,22,456,662,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
 
   titlefont = createFont(boldfontname, titlesize);
   textFont(titlefont);
