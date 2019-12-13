@@ -120,7 +120,7 @@ void loadDataFromFile(String filename) {
     lineon++;
   }
   characters = new String[lineon-9];
-  lineon = 9;
+  lineon = 10;
   while (!lines[lineon].equals("roles:")) {
     characters[lineon-9] = lines[lineon];
     lineon++;
