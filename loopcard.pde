@@ -119,10 +119,10 @@ void loadDataFromFile(String filename) {
   while (!lines[lineon].equals("roles:")) {
     lineon++;
   }
-  characters = new String[lineon-9];
+  characters = new String[lineon-10];
   lineon = 10;
   while (!lines[lineon].equals("roles:")) {
-    characters[lineon-9] = lines[lineon];
+    characters[lineon-10] = lines[lineon];
     lineon++;
   }
   lineon++;
