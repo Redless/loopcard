@@ -1,4 +1,4 @@
-//Be sure to add newline characters to your special rule.
+//edit the files "script1.txt" etcetera to change the scripts
 
 import processing.pdf.*;
 
