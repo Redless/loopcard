@@ -1,4 +1,4 @@
-name: The First Script
+name: Eleven's a Crowd
 theme: 1
 set: First Steps
 main: Murder Plan
@@ -14,6 +14,11 @@ Office Worker
 Police Officer
 Girl Student
 Boy Student
+Black Cat
+Scientist
+A. I.
+Journalist
+Informer
 roles:
 Brain
 Serial Killer

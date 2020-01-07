@@ -1,11 +1,11 @@
-name: The Second Script
+name: Impossible Seventh Murder
 theme: 2
 set: Still First Steps
 main: Murder Plan
 sub1: Shadow of the Ripper
 sub2: 
 loops: 3
-days: 4
+days: 7
 #: 10
 cast:
 Doctor
@@ -14,6 +14,7 @@ Office Worker
 Police Officer
 Girl Student
 Boy Student
+Godly Being (3)
 roles:
 Serial Killer
 Brain
@@ -21,12 +22,20 @@ Killer
 Conspiracy Theorist
 Key Person
 incidents:
-1: 
+1: Murder
 2: Murder
 3: Suicide
-4: 
+4: Murder
+5: Murder
+6: Murder
+7: Murder
 culprits:
 Office Worker
 Girl Student
+Shrine Maiden
+Doctor
+Police Officer
+Boy Student
+Godly Being
 special rule (can be multiple lines):
 None

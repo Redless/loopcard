@@ -323,9 +323,9 @@ void drawMMCard() {
   text("Subplots :", 81, 147);
   text("Cast", 81, 195);
   text("Role", 295, 195);
-  text("Day", 81, 537);
-  text("Incident", 134, 537);
-  text("Culprit", 295, 537);
+  text("Day", 81, 497);
+  text("Incident", 134, 497);
+  text("Culprit", 295, 497);
 
   textFont(tlfont);
 
@@ -358,10 +358,10 @@ void drawMMCard() {
   int j = 0;
   for (int i = 0; i < days; i++) {
     if (incidents[i].length() > 0) {
-      rect(77, 561+25*j, 392, 2);
-      text(str(i+1), 81, 560+25*j);
-      text(incidents[i], 135, 560+25*j);
-      text(culprits[j], 295, 560+25*j);
+      rect(77, 521+25*j, 392, 2);
+      text(str(i+1), 81, 520+25*j);
+      text(incidents[i], 135, 520+25*j);
+      text(culprits[j], 295, 520+25*j);
       j++;
     }
   }
@@ -414,7 +414,7 @@ void setup() {
     "Kumasawa", 
   };
 
-  defaultsize = 17;
+  defaultsize = 18;
   boldsize = 21;
   titlesize = 26;
   bigsize = 32;
