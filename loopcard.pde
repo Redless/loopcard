@@ -51,7 +51,7 @@ void setcolor() {
 }
 
 void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) {
-  int windowsize = 10;
+  int windowsize = 7;
   PGraphics card = createGraphics(width,height);
   card.beginDraw();
   card.loadPixels();
@@ -255,7 +255,7 @@ void drawProtagCard() {
 
 void drawCircle(int x,int y,int size,String label) {
   noFill();
-  stroke(200);
+  stroke(150);
   
   strokeWeight(size*3/44);
   line(x,y+size*32/44,x,y+size*38/44);
@@ -322,10 +322,10 @@ void drawMMCard() {
   text("Main plot :", 81, 120);
   text("Subplots :", 81, 147);
   text("Cast", 81, 195);
-  text("Role", 284, 195);
+  text("Role", 295, 195);
   text("Day", 81, 537);
-  text("Incident", 143, 537);
-  text("Culprit", 323, 537);
+  text("Incident", 134, 537);
+  text("Culprit", 295, 537);
 
   textFont(tlfont);
 
@@ -341,17 +341,17 @@ void drawMMCard() {
   textFont(smallfont);
 
   text(mainplot, 210, 120);
-  text(sub1, 199, 147);
-  text(sub2, 199, 168);
+  text(sub1, 203, 147);
+  text(sub2, 203, 168);
 
   for (int i = 0; i < characters.length; i++) {
     rect(77, 224+25*i, 392, 2);
     text(characters[i], 82, 221+25*i);
     try {
-      text(roles[i], 284, 221+25*i);
+      text(roles[i], 295, 221+25*i);
     } 
     catch (ArrayIndexOutOfBoundsException e) {
-      text("Person", 284, 221+25*i);
+      text("Person", 295, 221+25*i);
     }
   }
 
@@ -360,8 +360,8 @@ void drawMMCard() {
     if (incidents[i].length() > 0) {
       rect(77, 561+25*j, 392, 2);
       text(str(i+1), 81, 560+25*j);
-      text(incidents[i], 143, 560+25*j);
-      text(culprits[j], 323, 560+25*j);
+      text(incidents[i], 135, 560+25*j);
+      text(culprits[j], 295, 560+25*j);
       j++;
     }
   }
@@ -414,7 +414,7 @@ void setup() {
     "Kumasawa", 
   };
 
-  defaultsize = 19;
+  defaultsize = 17;
   boldsize = 21;
   titlesize = 26;
   bigsize = 32;

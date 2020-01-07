@@ -1,4 +1,4 @@
-name: The First Script
+name: The RMD Ruins Everything
 theme: 0
 set: First Steps
 main: Murder Plan
@@ -13,7 +13,7 @@ Shrine Maiden
 Office Worker
 Police Officer
 Girl Student
-Boy Student
+Rich Man's Daughter
 roles:
 Brain
 Serial Killer
@@ -24,9 +24,10 @@ incidents:
 1: 
 2: Murder
 3: Suicide
-4: 
+4: Hospital Incident
 culprits:
 Office Worker
 Girl Student
+Rich Man's Daughter
 special rule (can be multiple lines):
 None
