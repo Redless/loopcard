@@ -1,30 +1,49 @@
-name: The First Script
+name: Girl Student Gonna Getcha
 theme: 0
 set: First Steps
 main: Light of the Avenger
-sub1: Shadow of the Ripper
+sub1: Unsettling Rumor
 sub2: 
 loops: 3
-days: 4
+days: 15
 #: 3
 cast:
 Doctor
-Shrine Maiden
-Office Worker
-Police Officer
 Girl Student
-Boy Student
 roles:
-Brain
-Serial Killer
 Conspiracy Theorist
+Brain
 incidents:
-1: 
-2: Murder
-3: Suicide
-4: 
+1: Serial Murder
+2: Serial Murder
+3: Serial Murder
+4: Serial Murder
+5: Serial Murder
+6: Serial Murder
+7: Serial Murder
+8: Serial Murder
+9: Serial Murder
+10: Serial Murder
+11: Serial Murder
+12: Serial Murder
+13: Serial Murder
+14: Serial Murder
+15: Serial Murder
 culprits:
-Office Worker
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
+Girl Student
 Girl Student
 special rule (can be multiple lines):
 None

@@ -33,6 +33,7 @@ String sub1;
 String sub2;
 String scriptnumber;
 color circlecolor;
+int numincidents;
 
 void setcolor() {
   if (colorscheme == 0) {
@@ -171,8 +172,12 @@ void loadDataFromFile(String filename) {
   }
   lineon++;
   incidents = new String[25];
+  numincidents = 0;
   for (int i = 0; i < days; i++) {
     incidents[i] = lines[lineon+i].substring(3);
+    if (incidents[i].length() > 0) {
+      numincidents++;
+    }
   }
   lineon = lineon+days;
   lineon++;
@@ -323,9 +328,9 @@ void drawMMCard() {
   text("Subplots :", 81, 147);
   text("Cast", 81, 195);
   text("Role", 295, 195);
-  text("Day", 81, 497);
-  text("Incident", 134, 497);
-  text("Culprit", 295, 497);
+  text("Day", 81, 666-25*numincidents);
+  text("Incident", 134, 666-25*numincidents);
+  text("Culprit", 295, 666-25*numincidents);
 
   textFont(tlfont);
 
@@ -358,10 +363,10 @@ void drawMMCard() {
   int j = 0;
   for (int i = 0; i < days; i++) {
     if (incidents[i].length() > 0) {
-      rect(77, 521+25*j, 392, 2);
-      text(str(i+1), 81, 520+25*j);
-      text(incidents[i], 135, 520+25*j);
-      text(culprits[j], 295, 520+25*j);
+      rect(77, 698+25*j-25*numincidents, 392, 2);
+      text(str(i+1), 81, 695+25*j-25*numincidents);
+      text(incidents[i], 135, 695+25*j-25*numincidents);
+      text(culprits[j], 295, 695+25*j-25*numincidents);
       j++;
     }
   }

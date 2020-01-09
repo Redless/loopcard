@@ -1,4 +1,6 @@
-to do: adjust incident header height based on number of incidents
 add more colors
 make dim colors work better
 adjust size of title?
+fix bug where > 10 days doesn't work properly (do I have to!)
+adjust where the culprits appears with fewer numbers of characters
+add 'blanks' as a possibility

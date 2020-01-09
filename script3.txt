@@ -1,4 +1,4 @@
-name: Eleven's a Crowd
+name: Seventeen
 theme: 1
 set: First Steps
 main: Murder Plan
@@ -19,6 +19,12 @@ Scientist
 A. I.
 Journalist
 Informer
+Rich Man's Daughter
+Alien
+Nurse
+Patient
+Teacher
+Soldier
 roles:
 Brain
 Serial Killer
@@ -27,12 +33,9 @@ Conspiracy Theorist
 Key Person
 incidents:
 1: 
-2: Murder
-3: Suicide
-4: Hospital Incident
+2: 
+3: 
+4: 
 culprits:
-Office Worker
-Girl Student
-Boy Student
 special rule (can be multiple lines):
 None
