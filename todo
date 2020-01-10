@@ -1,6 +1,6 @@
-add more colors
-make dim colors work better
-adjust size of title?
-fix bug where > 10 days doesn't work properly (do I have to!)
 adjust where the culprits appears with fewer numbers of characters
-add 'blanks' as a possibility
+
+adjust size of title (with longer titles)
+
+add more colors
+line breaks for long char/incident names (fake incident)

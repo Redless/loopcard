@@ -53,7 +53,7 @@ void setcolor() {
 }
 
 void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) {
-  int windowsize = 7;
+  int windowsize = 9;
   PGraphics card = createGraphics(width,height);
   card.beginDraw();
   card.loadPixels();
@@ -79,7 +79,8 @@ void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) 
           }
         }
       }
-      newpixels[j][i] = color(r*2*tothue/numpix,g*2*tothue/numpix,b*2*tothue/numpix);
+      float val = (tothue/numpix - .5) * 100;
+      newpixels[j][i] = color(r+val,g+val,b+val);
     }
   }
   
