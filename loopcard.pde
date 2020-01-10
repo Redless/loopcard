@@ -336,6 +336,7 @@ void drawMMCard() {
   text("Subplots :", 81, 147);
   text("Cast", 81, 195);
   text("Role", 295, 195);
+  numincidents = min(17-characters.length,max(numincidents,5));
   text("Day", 81, 666-25*numincidents);
   text("Incident", 134, 666-25*numincidents);
   text("Culprit", 295, 666-25*numincidents);

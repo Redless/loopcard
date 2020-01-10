@@ -16,14 +16,10 @@ Girl Student
 Boy Student
 Black Cat
 Scientist
+Hellish Being
 A. I.
+Class Rep
 Journalist
-Informer
-Rich Man's Daughter
-Alien
-Nurse
-Patient
-Teacher
 Soldier
 roles:
 Brain
@@ -32,10 +28,11 @@ Killer
 Conspiracy Theorist
 Key Person
 incidents:
-1: 
+1: Suicide
 2: 
 3: 
 4: 
 culprits:
+Office Worker
 special rule (can be multiple lines):
 None
