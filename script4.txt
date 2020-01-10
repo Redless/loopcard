@@ -1,11 +1,11 @@
-name: Girl Student Gonna Getcha
+name: NONE
 theme: 0
 set: First Steps
 main: Light of the Avenger
 sub1: Unsettling Rumor
 sub2: 
 loops: 3
-days: 15
+days: 9
 #: 3
 cast:
 Doctor
@@ -23,19 +23,7 @@ incidents:
 7: Serial Murder
 8: Serial Murder
 9: Serial Murder
-10: Serial Murder
-11: Serial Murder
-12: Serial Murder
-13: Serial Murder
-14: Serial Murder
-15: Serial Murder
 culprits:
-Girl Student
-Girl Student
-Girl Student
-Girl Student
-Girl Student
-Girl Student
 Girl Student
 Girl Student
 Girl Student

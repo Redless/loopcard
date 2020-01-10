@@ -34,6 +34,7 @@ String sub2;
 String scriptnumber;
 color circlecolor;
 int numincidents;
+boolean makecard;
 
 void setcolor() {
   if (colorscheme == 0) {
@@ -129,6 +130,12 @@ void loadDataFromFile(String filename) {
   int lineon;
   String[] lines = loadStrings(filename);
   title = lines[0].substring(6);
+  if (title.equals("NONE")) {
+    print("skipping...");
+    makecard = false;
+  } else {
+    makecard = true;
+  }
   if (lines[1].charAt(7) == '0') {
     colorscheme = 0;
   }
@@ -445,6 +452,7 @@ void setup() {
   
   
   loadDataFromFile("script1.txt");
+  if (makecard) {
   setcolor();
   pushMatrix();
   translate(800, 70);
@@ -456,8 +464,9 @@ void setup() {
   rotate(HALF_PI);
   drawMMCard();
   popMatrix();
-  
+  }
   loadDataFromFile("script2.txt");
+  if (makecard) {
   setcolor();
   pushMatrix();
   translate(800, 590);
@@ -469,8 +478,9 @@ void setup() {
   rotate(HALF_PI);
   drawMMCard();
   popMatrix();
-  
+  }
   loadDataFromFile("script3.txt");
+  if (makecard){
   setcolor();
   pushMatrix();
   translate(800, 1110);
@@ -482,8 +492,9 @@ void setup() {
   rotate(HALF_PI);
   drawMMCard();
   popMatrix();
-  
+  }
   loadDataFromFile("script4.txt");
+  if (makecard) {
   setcolor();
   pushMatrix();
   translate(800, 1630);
@@ -495,6 +506,6 @@ void setup() {
   rotate(HALF_PI);
   drawMMCard();
   popMatrix();
-  
+  }
   
 }

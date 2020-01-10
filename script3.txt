@@ -1,4 +1,4 @@
-name: Seventeen
+name: seventeen
 theme: 1
 set: First Steps
 main: Murder Plan
