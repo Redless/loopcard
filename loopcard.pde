@@ -43,7 +43,7 @@ void setcolor() {
     circlecolor = color(0,150,190);
   } else if (colorscheme == 1) {
     titlecolor = color(224, 0, 21);
-    bgcolor = color(11, 5, 20);
+    bgcolor = color(22, 10, 40);
     circlecolor = color(224,0,21);
   } else if (colorscheme == 2) {
     titlecolor = color(216, 160, 60);
@@ -52,8 +52,10 @@ void setcolor() {
   }
 }
 
-void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) {
-  int windowsize = 9;
+void drawCard(int x,int y,int width,int height, int rat, int corner, int r, int g, int b) {
+  int windowsize = 15;
+  width = width/rat;
+  height = height/rat;
   PGraphics card = createGraphics(width,height);
   card.beginDraw();
   card.loadPixels();
@@ -79,7 +81,7 @@ void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) 
           }
         }
       }
-      float val = (tothue/numpix - .5) * 100;
+      float val = (tothue/numpix - .5) * 500;
       newpixels[j][i] = color(r+val,g+val,b+val);
     }
   }
@@ -124,7 +126,7 @@ void drawCard(int x,int y,int width,int height,int corner, int r, int g, int b) 
 
   card.updatePixels();
   card.endDraw();
-  image(card,x,y,width,height);
+  image(card,x,y,width*rat,height*rat);
 }
 
 void loadDataFromFile(String filename) {
@@ -214,7 +216,7 @@ void drawProtagCard() {
   
 
 
-  drawCard(22,22,456,662,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
+  drawCard(22,22,456,662,2,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
 
 
   ///GENERATES PROTAG CARD
@@ -319,7 +321,7 @@ void drawMMCard() {
 
   rect(0, 0, 500, 700, 20);
 
-  drawCard(22,22,456,662,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
+  drawCard(22,22,456,662,2,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
 
   
   
