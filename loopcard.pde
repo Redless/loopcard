@@ -37,18 +37,34 @@ int numincidents;
 boolean makecard;
 
 void setcolor() {
-  if (colorscheme == 0) {
+  if (colorscheme == 0) { //basic tragedy
     titlecolor = color(120, 190, 190);
     bgcolor = color(70, 15, 8);
     circlecolor = color(0,150,190);
-  } else if (colorscheme == 1) {
+  } else if (colorscheme == 1) { //midnight circle
     titlecolor = color(224, 0, 21);
     bgcolor = color(22, 10, 40);
     circlecolor = color(224,0,21);
-  } else if (colorscheme == 2) {
+  } else if (colorscheme == 2) { //cosmic evil
     titlecolor = color(216, 160, 60);
     bgcolor = color(37, 50, 47);
     circlecolor = color(216,160,60);
+  } else if (colorscheme == 3) { //monochrome
+    titlecolor = color(250, 250, 250);
+    bgcolor = color(30, 30, 30);
+    circlecolor = color(0,0,0);
+  } else if (colorscheme == 4) { //diseased
+    titlecolor = color(211, 80, 0);
+    bgcolor = color(60, 60, 0);
+    circlecolor = color(174,54,0);
+  } else if (colorscheme == 5) { //brown
+    titlecolor = color(80, 0, 200);
+    bgcolor = color(80,5,5);
+    circlecolor = color(80,0,200);
+  } else if (colorscheme == 6) { //blueprint
+    titlecolor = color(242, 242, 242);
+    bgcolor = color(15, 15, 52);
+    circlecolor = color(82,82,142);
   }
 }
 
@@ -139,15 +155,7 @@ void loadDataFromFile(String filename) {
   } else {
     makecard = true;
   }
-  if (lines[1].charAt(7) == '0') {
-    colorscheme = 0;
-  }
-  if (lines[1].charAt(7) == '1') {
-    colorscheme = 1;
-  } 
-  if (lines[1].charAt(7) == '2') {
-    colorscheme = 2;
-  } 
+  colorscheme = Integer.parseInt(lines[1].substring(7));
   tragset = lines[2].substring(5);
   mainplot = lines[3].substring(6);
   sub1 = lines[4].substring(6);

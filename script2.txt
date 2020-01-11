@@ -1,5 +1,5 @@
 name: Impossible Seventh Murder
-theme: 2
+theme: 4
 set: Still First Steps
 main: Murder Plan
 sub1: Shadow of the Ripper
