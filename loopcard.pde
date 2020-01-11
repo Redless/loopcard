@@ -131,6 +131,11 @@ void loadDataFromFile(String filename) {
   int lineon;
   String[] lines = loadStrings(filename);
   title = lines[0].substring(6);
+  if (title.length() < 25) {
+    titlefont = createFont(boldfontname, titlesize);
+  } else {
+    titlefont = createFont(boldfontname, titlesize*4/5);
+  }
   if (title.equals("NONE")) {
     print("skipping...");
     makecard = false;
@@ -321,11 +326,34 @@ void drawMMCard() {
 
   drawCard(22,22,456,662,10,int(red(bgcolor)),int(green(bgcolor)),int(blue(bgcolor)));
 
-  titlefont = createFont(boldfontname, titlesize);
+  
   textFont(titlefont);
   fill(titlecolor);
-
-  text(title, 95, 64);
+  if (title.length() < 33) {
+    text(title, 95, 64);
+  } else {
+    String word = "";
+    String title1 = "";
+    String title2 = "";
+    while (word.length() + title1.length() < 32) {
+      title1 = title1 + word;
+      word = "";
+      print("???");
+      while ((title.length() > 0) && (title.charAt(0) != ' ')) {
+        word = word + title.charAt(0);
+        title = title.substring(1);
+      }
+      word = word + ' ';
+      if (title.length() > 0) {
+        title = title.substring(1);
+      }
+      print(word);
+      print("\n");
+    }
+    title2 = word + title;
+    text(title1, 95, 50);
+    text(title2, 95, 80);
+  }
 
   textFont(ylfont);
   

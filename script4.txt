@@ -1,4 +1,4 @@
-name: NONEEEE
+name: The Specifics of The Tragedies of The Events That Week
 theme: 0
 set: First Steps
 main: Light of the Avenger
