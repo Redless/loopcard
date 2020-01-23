@@ -57,9 +57,9 @@ void setcolor() {
     titlecolor = color(211, 80, 0);
     bgcolor = color(60, 60, 0);
     circlecolor = color(174,54,0);
-  } else if (colorscheme == 5) { //brown
-    titlecolor = color(80, 0, 200);
-    bgcolor = color(80,5,5);
+  } else if (colorscheme == 5) { //blood and luxury
+    titlecolor = color(100, 0, 250);
+    bgcolor = color(100,0,0);
     circlecolor = color(80,0,200);
   } else if (colorscheme == 6) { //blueprint
     titlecolor = color(242, 242, 242);
@@ -97,7 +97,7 @@ void drawCard(int x,int y,int width,int height, int rat, int corner, int r, int 
           }
         }
       }
-      float val = (tothue/numpix - .5) * 500;
+      float val = (tothue/numpix - .5) * 800;
       newpixels[j][i] = color(r+val,g+val,b+val);
     }
   }
