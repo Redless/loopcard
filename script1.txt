@@ -1,5 +1,5 @@
 name: The RMD Ruins Everything
-theme: 3
+theme: 7
 set: First Steps
 main: Murder Plan
 sub1: Shadow of the Ripper

@@ -65,7 +65,11 @@ void setcolor() {
     titlecolor = color(242, 242, 242);
     bgcolor = color(15, 15, 52);
     circlecolor = color(82,82,142);
-  }
+  } else if (colorscheme == 7) { //icicle
+    titlecolor = color(0,20,24);//242, 242, 242);
+    bgcolor = color(0,100, 120);
+    circlecolor = color(0,20,24);
+  } 
 }
 
 void drawCard(int x,int y,int width,int height, int rat, int corner, int r, int g, int b) {
