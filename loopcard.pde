@@ -69,6 +69,22 @@ void setcolor() {
     titlecolor = color(0,20,24);//242, 242, 242);
     bgcolor = color(0,100, 120);
     circlecolor = color(0,20,24);
+  }  else if (colorscheme == 8) { //golden clock stop
+    titlecolor = color(226,195,0);
+    bgcolor = color(100,100, 100);
+    circlecolor = color(206,180,0);
+  } else if (colorscheme == 9) { //monokuma
+    titlecolor = color(255,255,255);
+    bgcolor = color(0,0,0);
+    circlecolor = color(255,0,0);
+  } else if (colorscheme == 10) { //emerald
+    titlecolor = color(0,140,40);
+    bgcolor = color(30,70,40);
+    circlecolor = color(100,60,0);
+  } else if (colorscheme == 11) { //desert
+    titlecolor = color(220,120,0);
+    bgcolor = color(60,45,0);
+    circlecolor = color(200,150,20);
   } 
 }
 
